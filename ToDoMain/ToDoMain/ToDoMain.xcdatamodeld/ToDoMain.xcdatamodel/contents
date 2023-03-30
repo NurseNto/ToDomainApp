@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21G83" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName="Category" syncable="YES">
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="toDoTasks" optional="YES" toMany="YES" deletionRule="Cascade" ordered="YES" destinationEntity="ToDoApp" inverseName="category" inverseEntity="ToDoApp"/>
+    </entity>
+    <entity name="ToDoApp" representedClassName="ToDoApp" syncable="YES">
+        <attribute name="completedAt" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isArchived" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="toDoTasks" inverseEntity="Category"/>
+    </entity>
+    <elements>
+        <element name="ToDoApp" positionX="-54" positionY="-9" width="128" height="104"/>
+        <element name="Category" positionX="-36" positionY="36" width="128" height="59"/>
+    </elements>
+</model>
